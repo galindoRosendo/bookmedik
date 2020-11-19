@@ -4,7 +4,7 @@ class ReservationData {
 
 
 	public function ReservationData(){
-		$this->name = "";
+		$this->NAME = "";
 		$this->lastname = "";
 		$this->email = "";
 		$this->password = "";
@@ -65,7 +65,7 @@ class ReservationData {
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." where date(date_at)>=date(NOW()) order by date_at";
+		$sql = "select * from `".self::$tablename."` where date(date_at)>=date(NOW()) order by date_at";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}

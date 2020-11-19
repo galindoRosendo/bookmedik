@@ -42,7 +42,7 @@ class PostData {
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by created_at desc";
+		$sql = "select * from `".self::$tablename."` order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PostData());
 	}

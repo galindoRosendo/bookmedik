@@ -3,7 +3,7 @@ class UserData {
 	public static $tablename = "user";
 
 	public function UserData(){
-		$this->name = "";
+		$this->NAME = "";
 		$this->lastname = "";
 		$this->username = "";
 		$this->password = "";
@@ -46,7 +46,7 @@ class UserData {
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by created_at desc";
+		$sql = "select * from `".self::$tablename."` order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new UserData());
 	}

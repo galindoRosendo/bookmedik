@@ -26,7 +26,7 @@ $payments = PaymentData::getAll();
 <select name="pacient_id" class="form-control" required>
 <option value="">-- SELECCIONE --</option>
   <?php foreach($pacients as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->pacient_id){ echo "selected"; }?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->pacient_id){ echo "selected"; }?>><?php echo $p->id." - ".$p->NAME." ".$p->lastname; ?></option>
   <?php endforeach; ?>
 </select>
     </div>
@@ -35,7 +35,7 @@ $payments = PaymentData::getAll();
 <select name="medic_id" class="form-control" required>
 <option value="">-- SELECCIONE --</option>
   <?php foreach($medics as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->medic_id){ echo "selected"; }?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->medic_id){ echo "selected"; }?>><?php echo $p->id." - ".$p->NAME." ".$p->lastname; ?></option>
   <?php endforeach; ?>
 </select>
     </div>
@@ -79,7 +79,7 @@ $payments = PaymentData::getAll();
     <div class="col-lg-4">
 <select name="status_id" class="form-control" required>
   <?php foreach($statuses as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->status_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->status_id){ echo "selected"; }?>><?php echo $p->NAME; ?></option>
   <?php endforeach; ?>
 </select>
     </div>
@@ -87,7 +87,7 @@ $payments = PaymentData::getAll();
     <div class="col-lg-4">
 <select name="payment_id" class="form-control" required>
   <?php foreach($payments as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->payment_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->payment_id){ echo "selected"; }?>><?php echo $p->NAME; ?></option>
   <?php endforeach; ?>
 </select>
     </div>

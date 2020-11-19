@@ -38,11 +38,11 @@
 			foreach($users as $user){
 				?>
 				<tr>
-				<td><?php echo $user->name." ".$user->lastname; ?></td>
+				<td><?php echo $user->NAME." ".$user->lastname; ?></td>
 				<td><?php echo $user->address; ?></td>
 				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->phone; ?></td>
-				<td><?php if($user->category_id!=null){ echo $user->getCategory()->name; } ?></td>
+				<td><?php if($user->category_id!=null){ echo $user->getCategory()->NAME; } ?></td>
 				<td style="width:280px;">
 				<a href="index.php?view=medichistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
 				<a href="index.php?view=editmedic&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
@@ -51,11 +51,10 @@
 				</td>
 				</tr>
 				<?php
+			}
 ?>
 </table>
 <?php
-			}
-
 
 
 		}else{

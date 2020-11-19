@@ -24,7 +24,7 @@ $payments = PaymentData::getAll();
 <select name="pacient_id" class="form-control">
 <option value="">PACIENTE</option>
   <?php foreach($pacients as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["pacient_id"]) && $_GET["pacient_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["pacient_id"]) && $_GET["pacient_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->id." - ".$p->NAME." ".$p->lastname; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
@@ -35,7 +35,7 @@ $payments = PaymentData::getAll();
 <select name="medic_id" class="form-control">
 <option value="">MEDICO</option>
   <?php foreach($medics as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["medic_id"]) && $_GET["medic_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["medic_id"]) && $_GET["medic_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->id." - ".$p->NAME." ".$p->lastname; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
@@ -61,7 +61,7 @@ $payments = PaymentData::getAll();
 		  <span class="input-group-addon">ESTADO</span>
 <select name="status_id" class="form-control">
   <?php foreach($statuses as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["status_id"]) && $_GET["status_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->name; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["status_id"]) && $_GET["status_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->NAME; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
@@ -71,7 +71,7 @@ $payments = PaymentData::getAll();
 		  <span class="input-group-addon">PAGO</span>
 <select name="payment_id" class="form-control">
   <?php foreach($payments as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["payment_id"]) && $_GET["payment_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->name; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["payment_id"]) && $_GET["payment_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->NAME; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
@@ -156,11 +156,11 @@ if($_GET["status_id"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ||$_G
 				?>
 				<tr>
 				<td><?php echo $user->title; ?></td>
-				<td><?php echo $pacient->name." ".$pacient->lastname; ?></td>
-				<td><?php echo $medic->name." ".$medic->lastname; ?></td>
+				<td><?php echo $pacient->NAME." ".$pacient->lastname; ?></td>
+				<td><?php echo $medic->NAME." ".$medic->lastname; ?></td>
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
-				<td><?php echo $user->getStatus()->name; ?></td>
-				<td><?php echo $user->getPayment()->name; ?></td>
+				<td><?php echo $user->getStatus()->NAME; ?></td>
+				<td><?php echo $user->getPayment()->NAME; ?></td>
 				<td>$ <?php echo number_format($user->price,2,".",",");?></td>
 				</tr>
 				<?php

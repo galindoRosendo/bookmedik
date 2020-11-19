@@ -19,7 +19,7 @@ $categories = CategoryData::getAll();
     <select name="category_id" class="form-control">
     <option value="">-- SELECCIONE --</option>      
     <?php foreach($categories as $cat):?>
-    <option value="<?php echo $cat->id; ?>" <?php if($user->category_id==$cat->id){ echo "selected"; }?>><?php echo $cat->name; ?></option>      
+    <option value="<?php echo $cat->id; ?>" <?php if($user->category_id==$cat->id){ echo "selected"; }?>><?php echo $cat->NAME; ?></option>      
     <?php endforeach;?>
     </select>
     </div>
@@ -28,7 +28,7 @@ $categories = CategoryData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="name" value="<?php echo $user->name;?>" class="form-control" id="name" placeholder="Nombre">
+      <input type="text" name="name" value="<?php echo $user->NAME;?>" class="form-control" id="name" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group">

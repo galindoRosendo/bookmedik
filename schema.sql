@@ -1,6 +1,18 @@
 /*
 * BookMedik Database
-* @author Evilnapsis
+* @author Evilnapsis  axfx&96(AMZ=_Izp
+
+/* CREATE USER 'appsroot'@'localhost' IDENTIFIED BY 'N0podras!'; */
+
+/* GRANT ALL PRIVILEGES ON *.* TO 'appsroot'@'localhost' WITH GRANT OPTION;*/
+
+/*CREATE USER 'appsroot'@'%' IDENTIFIED BY 'N0podras!';*/
+
+/* GRANT ALL PRIVILEGES ON *.* TO 'appsroot'@'%' WITH GRANT OPTION; */
+
+/*SHOW GRANTS FOR appsroot;*/
+
+FLUSH PRIVILEGES;
 */
 create database bookmedik;
 use bookmedik; 
@@ -97,8 +109,8 @@ create table reservation(
 	price double,
 	is_web boolean not null default 0,
 	payment_id int not null default 1,
-	foreign key (payment_id) references payment(id),
 	status_id int not null default 1,
+	foreign key (payment_id) references payment(id),
 	foreign key (status_id) references status(id),
 	foreign key (user_id) references user(id),
 	foreign key (pacient_id) references pacient(id),

@@ -128,8 +128,8 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 				?>
 				<tr>
 				<td><?php echo $user->title; ?></td>
-				<td><?php echo $pacient->name." ".$pacient->lastname; ?></td>
-				<td><?php echo $medic->name." ".$medic->lastname; ?></td>
+				<td><?php echo $pacient->NAME." ".$pacient->lastname; ?></td>
+				<td><?php echo $medic->NAME." ".$medic->lastname; ?></td>
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
 				<td style="width:180px;">
 				<a href="index.php?view=editreservation&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>

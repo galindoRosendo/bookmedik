@@ -1,8 +1,9 @@
 <?php
 class PacientData {
-	public static $tablename = "pacient";
+	public static $tablename = "`pacient`";
 	public function PacientData(){
 		$this->title = "";
+		$this->NAME = "";
 		$this->email = "";
 		$this->image = "";
 		$this->password = "";
@@ -51,13 +52,13 @@ class PacientData {
 	}
 
 	public static function getAllActive(){
-		$sql = "select * from client where last_active_at>=date_sub(NOW(),interval 3 second)";
+		$sql = "select * from `client` where last_active_at>=date_sub(NOW(),interval 3 second)";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PacientData());
 	}
 
 	public static function getAllUnActive(){
-		$sql = "select * from client where last_active_at<=date_sub(NOW(),interval 3 second)";
+		$sql = "select * from `client` where last_active_at<=date_sub(NOW(),interval 3 second)";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PacientData());
 	}
